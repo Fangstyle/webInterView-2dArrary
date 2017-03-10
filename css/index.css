@@ -1,0 +1,96 @@
+html{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ececec;
+}
+.container{
+    display: inline-block;
+    background-color: #fff;
+ /*   text-align: center;
+    vertical-align: middle;*/
+}
+.container table{
+    display: inline-block;
+    background-color: #fff;
+    text-align: center;
+    vertical-align: middle;
+}
+
+tr{
+    border-bottom: 1px solid #ddd;
+    height: 35px;
+    padding: 0 20px;
+}
+th{
+    text-align:center;
+    width: 60px;
+    height: 45px;
+    color: #999;
+    font-size: 15px;
+    margin: 5px 0;
+}
+td{
+    line-height: 35px;
+    cursor: pointer;
+}
+/*td span{
+    display: block;
+    text-align:center;
+    width: 65px;
+    height: 35px;
+    color: #999;
+    font-size: 15px;
+    font-weight:500 ;
+    margin: 5px 0;
+    cursor: pointer;
+}*/
+td:nth-child(3) {
+    color: #802a98;
+}
+td:first-child,th:first-child{
+    box-sizing: border-box;
+    padding-left: 11px;
+}
+td:last-child,th:last-child{
+    box-sizing: border-box;
+    padding-right: 11px ;
+}
+.alert-dialog-bg{
+    display: none;
+    position: absolute;
+    top: 0;
+    left:0 ;
+    right: 0;
+    bottom: 0;
+    background: rgba(1,1,1,.5);
+}
+.alert-dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -400px;
+    width: 800px;
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+}
+.alert-dialog section{
+    width: 100px;
+    height: 50px;
+}
+.alert-dialog a{
+    padding: 5px;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+.chang-num{
+    padding: 100px 0;
+}
+.chang-num a{
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    padding: 3px;
+}
