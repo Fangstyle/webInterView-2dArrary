@@ -45,8 +45,11 @@ td{
     margin: 5px 0;
     cursor: pointer;
 }*/
-td:nth-child(3) {
+td:last-child {
     color: #802a98;
+}
+tr:last-child {
+    color: #002a98;
 }
 td:first-child,th:first-child{
     box-sizing: border-box;
