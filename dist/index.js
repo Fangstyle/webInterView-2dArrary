@@ -22,7 +22,7 @@ function initArray() {
             tArray[k][j] = k * 10 + j;
             tempOld += tArray[k][j] + " ";
         }
-        console.log(tempOld);
+        //console.log(tempOld);
     }
     return tArray;
 }
@@ -56,14 +56,16 @@ function initDom(tArray, refreh) {
     tableContainer.html(innerText);
 
     /*遍历结束后 新增一行 tr 为了计算每一列的total*/
-    var caculateLine = document.createElement('tr');
+    var caculateLine = $('<tr></tr>');
     var tempTdItem = '';
     for (var _i2 = 0; _i2 <= column; _i2++) {
         tempTdItem += '<td> </td>\n';
     }
-    caculateLine.innerHTML = tempTdItem;
-    tableContainer.append($(caculateLine));
+    caculateLine.html(tempTdItem);
+
+    tableContainer.append(caculateLine);
     caculate(tArray, tableContainer, column, row);
+
     /*判断是否刷新 如果是刷新 不对底部dom进行刷新 优化性能*/
     if (!refreh) {
         var sColomn = document.getElementById('sColomn');
@@ -76,8 +78,8 @@ function initDom(tArray, refreh) {
         for (var _i4 = 0; _i4 < row; _i4++) {
             sRowOptionStr += '<option>' + (_i4 + 1) + '</option>\n';
         }
-        sColomn.innerHTML = sColomnOptionStr;
-        sRow.innerHTML = sRowOptionStr;
+        $(sColomn).html(sColomnOptionStr);
+        $(sRow).html(sRowOptionStr);
     } else {
         changDialogNum(tArray);
     }
@@ -92,7 +94,7 @@ function caculate(array) {
         for (var j = 0; j < row; j++) {
             columItemTotal += array[j][i];
         }
-        console.log(columItemTotal);
+        //console.log(columItemTotal);
         var tdItem = $(caculateTr).find('td');
         $(tdItem[i]).html(columItemTotal);
     }
@@ -118,20 +120,25 @@ function changDialogNum(tArray) {
     var dialogConfirm = dialog.getElementsByTagName('a')[0];
     var rowPostion = 0;
     var columnPostion = 0;
-    for (var i = 0; i < trList.length; i++) {
+/*    for (var i = 0; i < trList.length; i++) {
         trList[i].onclick = function (e) {
             var event = e || event;
             dialog.style.display = 'block';
             rowPostion = Math.floor(event.target.dataset.postion / column);
             columnPostion = event.target.dataset.postion % column;
-            console.log(rowPostion + "," + columnPostion);
+            //console.log(rowPostion + "," + columnPostion);
         };
-    }
+    }*/
+    $('tr').on('click','td',function (event) {
+        dialog.style.display = 'block';
+        rowPostion = Math.floor(event.target.dataset.postion / column);
+        columnPostion = event.target.dataset.postion % column;
+    });
     dialogConfirm.onclick = function () {
         dialog.style.display = 'none';
         var value = parseInt(document.getElementById('finalNum').value);
         tArray[rowPostion][columnPostion] = value;
-        console.log(tArray[rowPostion][columnPostion]);
+        //console.log(tArray[rowPostion][columnPostion]);
         initDom(tArray, true);
     };
 }
@@ -146,7 +153,7 @@ function changNum(tArray) {
         var columnIndex = columnSelection.selectedIndex;
         var columnValue = parseInt(columnSelection.options[columnIndex].value);
         var value = parseInt(document.getElementById('changNums').value);
-        console.log(rowValue + "," + columnIndex + value);
+        //console.log(rowValue + "," + columnIndex + value);
         if (value && parseInt(value)) {
             tArray[rowValue - 1][columnValue - 1] = value;
             initDom(tArray, true);
