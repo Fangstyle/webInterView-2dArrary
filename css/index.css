@@ -5,6 +5,7 @@ html{
     background-color: #ececec;
 }
 .container{
+    padding: 20px 0;
     display: inline-block;
     background-color: #fff;
  /*   text-align: center;
@@ -51,6 +52,9 @@ td:last-child {
 tr:last-child {
     color: #002a98;
 }
+tr:last-child td:last-child{
+    color: #108898;
+}
 td:first-child,th:first-child{
     box-sizing: border-box;
     padding-left: 11px;
@@ -92,7 +96,7 @@ td:last-child,th:last-child{
     padding: 100px 0;
 }
 .chang-num a{
-    background-color: #fff;
+    background-color: #666666;
     color: #000;
     cursor: pointer;
     padding: 3px;

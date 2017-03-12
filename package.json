@@ -1,0 +1,24 @@
+{
+  "name": "interview1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fangstyle/webInterView-2dArrary.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fangstyle/webInterView-2dArrary/issues"
+  },
+  "homepage": "https://github.com/Fangstyle/webInterView-2dArrary#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.22.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2"
+  }
+}
